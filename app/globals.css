@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
-:root {
+[data-theme="dark"] {
+  --background: #1e1e2e;
+  --foreground: #7f849c;
+  --header-font-color: #cdd6f4;
+  --text-color: #bac2de;
+  --button-background: #b4befe;
+  --button-color: #1e1e2e;
+  --card-header: #1e1e2ee0;
+  --card-background: #2c2d3d;
+  --box-shadow-color: rgba(0, 0, 0, 0.5); /* Add this line */
+  --box-shadow-color: rgba(0, 0, 0, 0.1); /* Add this line */
+}
+
+[data-theme="light"] {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #24292e;
+  --header-font-color: #24292e;
+  --text-color: #24292e;
+  --button-background: #ccd0da;
+  --button-color: #24292e;
+  --card-header: #ccd0da;
+  --card-background: #acb0be;
+  --box-shadow-color: rgba(0, 0, 0, 0.1); /* Add this line */
+  --box-background: #f0f0f0; /* Add this line */
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: var(--background);
+  color: var(--text-color);
+  h1 {
+    color: var(--header-font-color);
+  }
+  .button-background {
+    background-color: var(--button-background);
+  }
+  main {
+    flex-grow: 9;
   }
 }
 
-body {
+.arrows {
+  width: 60px;
+  height: 72px;
+}
+
+.arrows path {
+  stroke: var(--foreground);
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+}
+.card {
+  background-color: var(--card-background);
+}
+
+.imageSection {
+  padding: var(--mantine-spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.label {
+  margin-bottom: var(--mantine-spacing-xs);
+  line-height: 1;
+  font-weight: 700;
+  font-size: var(--mantine-font-size-xs);
+  letter-spacing: -0.25px;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: var(--mantine-spacing-md);
+  border-top: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.icon {
+  margin-right: 5px;
+  color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-2));
+}
+
+.custom-dropdown {
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+/* Target the vertical splitter */
+.ant-splitter-bar-dragger{
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rounded-panel {
+  border-radius: 10px; /* Adjust the radius as needed */
+  overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
 }
