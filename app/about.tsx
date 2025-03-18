@@ -68,8 +68,7 @@ export default function About() {
                     children: (
                       <>
                         <strong>
-                          University of Toronto – B.Sc. Computer
-                          Science
+                          University of Toronto – B.Sc. Computer Science
                         </strong>
                         <p>
                           Major in Computer Science with a minor in Statistics
@@ -83,8 +82,7 @@ export default function About() {
                     label: "Jan 2019 - Aug 2019",
                     children: (
                       <strong>
-                        2017 - 2022, National Bank of Canada – Software
-                        Engineering Intern
+                        National Bank of Canada – Software Engineering Intern
                       </strong>
                     ),
                   },
@@ -92,32 +90,30 @@ export default function About() {
                     color: "blue",
                     label: "Jan 2021 - Aug 2021",
                     children: (
-                        <strong>
-                            2020 - 2021, DBRS Morningstar – Full Stack Developer
-                        </strong>
+                      <strong>DBRS Morningstar – Full Stack Developer</strong>
                     ),
                   },
                   {
                     color: "green",
                     label: "Nov 2023",
-                    children: (
-                        <strong>
-                            CFA Level 1
-                        </strong>
-                    ),
+                    children: <strong>CFA Level 1</strong>,
                   },
                   {
                     color: "red",
                     label: "Feb 2022 - Present",
                     children: (
-                        <>
+                      <>
                         <strong>
-                            2021 - 2022, Hillsdale Investment Management – Quantitative Developer
+                          Hillsdale Investment Management – Quantitative
+                          Developer
                         </strong>
-<p>Developed scalable ETL pipelines, trading strategy simulation engines, and backtesting frameworks.</p>
-</>
+                        <p>
+                          Developed scalable ETL pipelines, trading strategy
+                          simulation engines, and backtesting frameworks.
+                        </p>
+                      </>
                     ),
-                  }
+                  },
                 ]}
               />
             </ConfigProvider>
